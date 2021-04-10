@@ -1,7 +1,7 @@
 {
   "layout": "page.njk",
   "title": "Pages",
-  "tags": "page",
+  "tags": "about",
   "showDate": true,
   "scripts": []
 }
