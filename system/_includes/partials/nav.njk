@@ -35,8 +35,7 @@
     {%- for entry in navPages %}
       <li>
         <a href="{{ entry.url | url }}"{% if entry.url == page.url %}
-        class="quicksand"
-        data-current="current item"{% endif %}>{{ entry.title }}</a>
+        data-current="current item"{% endif %} class="quicksand">{{ entry.title }}</a>
       </li>
     {%- endfor %}
     <li>

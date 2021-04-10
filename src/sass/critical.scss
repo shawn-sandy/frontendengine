@@ -1,1 +1,8 @@
 @use '@shawnsandy/first-paint/src/styles/critical.scss';
+
+body {
+  background-color: #F2F4F6;
+  background-image: url("/images/header-bg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}

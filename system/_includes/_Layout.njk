@@ -18,9 +18,9 @@
     <title>{{ title }} | {{ settings.title }}</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
-      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
       media="all"
+      rel="stylesheet"
     />
     <!-- load the critical styles inline -->
     {% set css %} {% include "src/css/critical.css" %} {% endset %}
@@ -52,10 +52,13 @@
     <!-- header -->
     <!-- header -->
     {% block header %}
-    <!-- nav -->
-    {% include "partials/nav.njk" %} {% endblock %}
-    <!-- cover -->
-    <header>{% block cover %} {% endblock %}</header>
+
+    <header>
+      <!-- nav -->
+      {% include "partials/nav.njk" %} {% endblock %}
+      <!-- cover -->
+      {% block cover %} {% endblock %}
+    </header>
     <!-- content -->
     {% block content %}
     {{ content | safe }}
