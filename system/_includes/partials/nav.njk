@@ -1,10 +1,5 @@
 <nav data-show-mobile>
   <section>
-    <section data-brand="">
-       <h1>
-          {% include 'partials/brand.njk' %}
-       </h1>
-     </section>
      <section data-show-mobile>
        <a role="button" href="#sidebar" data-sidebar-button>
          <small>
@@ -22,11 +17,16 @@
          </small>
        </a>
      </section>
+    <section>
+       <h1>
+          {% include 'partials/brand.njk' %}
+       </h1>
+     </section>
   </section>
 </nav>
 
 <nav id="sidebar" role="navigation" aria-label="Main navigation">
-  <section data-brand data-show-desktop>
+  <section data-brand- data-show-desktop>
     <h1>
       {% include 'partials/brand.njk' %}
     </h1>
