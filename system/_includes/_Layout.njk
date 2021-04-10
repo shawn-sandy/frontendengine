@@ -12,14 +12,16 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <script
-      src="https://kit.fontawesome.com/e2ffdf4c70.js"
-      crossorigin="anonymous"
-    ></script>
 
     <meta name="description" content="{{ pkg.description }}" />
     {% block head %}
-    <title>{{ settings.title }} | {{ title }}</title>
+    <title>{{ title }} | {{ settings.title }}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap"
+      rel="stylesheet"
+      media="all"
+    />
     <!-- load the critical styles inline -->
     {% set css %} {% include "src/css/critical.css" %} {% endset %}
     <!-- feed it through our cssmin filter to minify -->
