@@ -1,7 +1,8 @@
 {
-  "title": "First.Paint Pages",
-  "url": "https://proideas.dev/",
-  "description": "A minimalist UI Toolkit for building stylish, performance driven, accessibility first websites",
+  "title": "Frontend Engine",
+  "subtitle": "Interaction, Design, Engineering",
+  "description": "Curated  articles, news and resources on Frontend User Experience(UX), User Interaction(UI), and Engineering",
+  "url": "https://frontengine.com/",
   "feed": {
     "subtitle": "A UI toolkit for creating and managing design/style systems, pattern libraries, style-guides, etc",
     "filename": "feed.xml",
@@ -10,7 +11,7 @@
   },
   "author": {
     "name": "Shawn Sandy",
-    "email": "shawnsandy@proideas.dev"
+    "email": "shawnsandy@gmail.com"
   },
   "styles": [],
   "scripts": [
