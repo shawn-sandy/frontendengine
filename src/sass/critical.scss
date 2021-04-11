@@ -1,1 +1,18 @@
 @use '@shawnsandy/first-paint/src/styles/critical.scss';
+
+body {
+  background-color: #F2F4F6 !important;
+  background-image: url("/images/header-bg.svg");
+  background-repeat: no-repeat;
+  background-size: 100% !important;
+}
+
+.quicksand {
+  font-family: 'Quicksand',
+    sans-serif !important;
+  font-weight: 700;
+
+  &-medium {
+    font-weight: 500;
+  }
+}
