@@ -47,7 +47,8 @@ nav {
 footer[role="contentinfo"] {
   background-color: #002C4B;
   padding: 2rem 0;
-  color: #fff;
+  font-size: .82rem;
+  color: #FF4154;
 
   a {
 
@@ -55,8 +56,12 @@ footer[role="contentinfo"] {
     &:visited,
     &:link,
     &:hover {
-      color: #fff
+      color: #FF4154
     }
 
+  }
+
+  small {
+    font-size: .75rem;
   }
 }
