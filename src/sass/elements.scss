@@ -43,3 +43,20 @@ nav {
     //align-items: center;
   }
 }
+
+footer {
+  background-color: #002C4B;
+  padding: 1rem 0;
+  color: #fff;
+
+  a {
+
+    &:active,
+    &:visited,
+    &:link,
+    &:hover {
+      color: #fff
+    }
+
+  }
+}
