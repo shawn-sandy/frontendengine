@@ -1,0 +1,5 @@
+<section>
+  {%- for quote in collections.quotes %}
+  <p>{{ quote.templateContent | safe }}</p>
+  {% endfor -%}
+</section>

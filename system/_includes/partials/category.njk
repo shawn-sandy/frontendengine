@@ -10,9 +10,9 @@
   <p>
     {% if content.data.summary -%}
     {{ content.data.summary }}
-    {% else -%}
+    {% else %}
     {{ hlp.11ty.noHtml(content.templateContent) | truncate(300) }}
-    {% endif %}
+    {% endif -%}
   </p>
   <footer>
     <a href="{{ content.url }}" role="button">
