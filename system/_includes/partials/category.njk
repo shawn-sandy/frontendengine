@@ -7,7 +7,13 @@
   <h3 id="{{ content.data.title | slug }}">
     <a href="{{ content.url }}">{{ content.data.title }}</a>
   </h3>
-  <p>{{ content.data.summary }}</p>
+  <p>
+    {% if content.data.summary -%}
+    {{ content.data.summary }}
+    {% else %}
+    {{ hlp.11ty.noHtml(content.templateContent) | truncate(300) }}
+    {% endif -%}
+  </p>
   <footer>
     <a href="{{ content.url }}" role="button">
       <em>Continue reading</em>

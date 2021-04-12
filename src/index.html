@@ -6,8 +6,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ settings.title }}</title>
-    <meta name="description" content="title" />
-    <meta name="author" content="author" />
+    <meta name="description" content="{{ settings.description }}" />
+    <meta name="author" content="{{ settings.author.name }}" />
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
       media="all"
@@ -35,7 +35,7 @@
             </p>
             <p>
               <a
-                href="#"
+                href="/main"
                 role="button"
                 aria-label="Add word, cta action, to your button title"
               >
