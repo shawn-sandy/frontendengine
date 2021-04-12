@@ -7,6 +7,28 @@ body {
   background-size: 100% !important;
 }
 
+$pink: #FF4154;
+
+.action-primary,
+nav section a {
+  color: #FF4154;
+
+  &:active,
+  &:visited,
+  &:link {
+    color: $pink;
+  }
+
+  &:hover {
+    color: darken($pink, 40)
+  }
+}
+
+main {
+  min-height: 50vh !important;
+}
+
+
 .quicksand {
   font-family: 'Quicksand',
     sans-serif !important;
