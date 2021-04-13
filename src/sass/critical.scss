@@ -10,19 +10,23 @@ body {
 $pink: #FF4154;
 
 .action-primary,
-nav section a {
-  color: #FF4154;
+nav section {
 
-  &:active,
-  &:visited,
-  &:link {
-    color: $pink;
-  }
+  a {
+    color: #FF4154;
 
-  &:hover {
-    color: darken($pink, 40)
+    &:active,
+    &:visited,
+    &:link {
+      color: $pink;
+    }
+
+    &:hover {
+      color: darken($pink, 40)
+    }
   }
 }
+
 
 main {
   min-height: 50vh !important;
