@@ -32,7 +32,7 @@
   {% set navPages = collections.all | eleventyNavigation %}
   <section id="sidebar">
     <ul>
-    {%- if env.developer_mode %}
+    {%- if env.developer_mode === true %}
     {%- for entry in navPages %}
       <li>
         <a href="{{ entry.url | url }}"{% if entry.url == page.url %}
