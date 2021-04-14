@@ -1,7 +1,21 @@
 ---
 layout: landing.njk
 title: "Cover Page"
+tags: "page"
+eleventyExcludeFromCollections": true
+feature: ["interaction", "experience", "engineering"]
 scripts: []
 ---
 
-<section>{% include "./partials/quotes.html" %}</section>
+<section>{%- include "./partials/quotes.html" %}</section>
+
+<!--  -->
+{% import "macros/features.njk" as feature with context %}
+
+<section>{{ feature.category('experience') }}</section>
+<hr />
+<section>{{ feature.category('interaction') }}</section>
+<hr />
+<section>{{ feature.category('engineering') }}</section>
+<hr />
+<section>{{ feature.category() }}</section>

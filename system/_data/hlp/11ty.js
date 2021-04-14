@@ -6,10 +6,14 @@ const currentYear = () => date.getFullYear()
 
 const formatDate = (date) => new Date(date).toDateString()
 
-const stripHtml = (content) => content.replace(/(<([^>]+)>)/ig, '')
+const stripHtml = (content = null) => {
+  if (content === null || content === undefined) return
+  content.replace(/(<([^>]+)>)/ig, '')
+}
 
 module.exports = {
   year: currentYear,
   strip: stripHtml,
+  noHtml: stripHtml,
   formatDate: formatDate
 }
