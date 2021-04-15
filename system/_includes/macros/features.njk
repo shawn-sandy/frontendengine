@@ -5,16 +5,19 @@
 <!--  -->
 {% for content in data %}
 <article>
-  <time datetime="{{ page.date.toLocaleString() }}">
-    Posted: {{ content.date.toUTCString() }}
-    <!-- Posted: {{ hlp.11ty.formatDate(content.date.toUTCString()) }} -->
-  </time>
   <h3 id="{{ content.data.title or 'no-slug' | slug }}">
     <a href="{{ content.url }}">{{ content.data.title }}</a>
   </h3>
   <p>
-    {% if content.data.summary -%} {{ content.data.summary }} {% elif
-    content.templateContent %}
+    <time datetime="{{ page.date.toLocaleString() }}">
+      Posted: {{ content.date.toUTCString() }}
+      <!-- Posted: {{ hlp.11ty.formatDate(content.date.toUTCString()) }} -->
+    </time>
+  </p>
+  <p>
+    {% if content.data.summary.length -%}
+    {{ content.data.summary }}
+    {% else %}
     {{ hlp.11ty.noHtml(content.templateContent) |
     truncate(300) }}
     {% endif -%}

@@ -8,7 +8,7 @@ const formatDate = (date) => new Date(date).toDateString()
 
 const stripHtml = (content = null) => {
   if (content === null || content === undefined) return
-  content.replace(/(<([^>]+)>)/ig, '')
+  return content.replace(/(<([^>]+)>)/ig, '')
 }
 
 module.exports = {
