@@ -1,7 +1,7 @@
 {
   "title": "Frontend Engine",
   "subtitle": "Frontend Interaction, Design, Engineering",
-  "description": "Curated  articles, news and resources on Frontend User Experience(UX), User Interaction(UI), and Engineering",
+  "description": "A weekly collection of articles, news and resources on Frontend User Experience(UX), User Interaction(UI), and Engineering(development)",
   "url": "https://frontengine.com/",
   "feed": {
     "subtitle": "A UI toolkit for creating and managing design/style systems, pattern libraries, style-guides, etc",

@@ -3,20 +3,18 @@ layout: landing.njk
 title: "Cover Page"
 tags: "page"
 eleventyExcludeFromCollections": true
-feature: ["interaction", "experience", "engineering"]
 summary: "Interactively develop emerging best practices and open-source alignments. Quickly envisioneer superior best practices without high-payoff technology. "
 scripts: []
 ---
 
 <section>{%- include "./partials/quotes.html" %}</section>
 
-<!--  -->
-{% import "macros/features.njk" as feature with context %}
+{% import "macros/collections.njk" as collection with context %}
 
-<section>{{ feature.category('experience') }}</section>
+<section>{{ collection.category('experience') }}</section>
 
-<section>{{ feature.category('interaction') }}</section>
+<section>{{ collection.category('interaction') }}</section>
 
-<section>{{ feature.category('engineering') }}</section>
+<section>{{ collection.category('engineering') }}</section>
 
-<section>{{ feature.category() }}</section>
+<section>{{ collection.category() }}</section>
