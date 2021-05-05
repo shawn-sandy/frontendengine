@@ -5,9 +5,9 @@
 <!--  -->
 {% for content in data %}
 <article>
-  <h3 id="{{ content.data.title or 'no-slug' | slug }}">
+  <h2 id="{{ content.data.title or 'no-slug' | slug }}">
     <a href="{{ content.url }}">{{ content.data.title }}</a>
-  </h3>
+  </h2>
   <p>
     <time datetime="{{ page.date.toLocaleString() }}">
       Posted: {{ content.date  }}
