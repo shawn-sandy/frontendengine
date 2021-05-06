@@ -1,8 +1,5 @@
 {%- macro category(tag = 'posts') %}
-<!--  -->
 {%- set data = collections[tag] %}
-
-<!--  -->
 {% for content in data %}
 <article>
   <h2 id="{{ content.data.title or 'no-slug' | slug }}">
@@ -18,7 +15,6 @@
   </p>
   <p>
     <time datetime="{{ page.date.toLocaleString() }}">
-      {# Posted: {{ content.date  }} #}
       Posted: {{ hlp.11ty.timePosted(content.date) }}
     </time>
   </p>
@@ -29,7 +25,5 @@
   </footer>
   <hr />
 </article>
-
 {% endfor %}
-<!--  -->
 {% endmacro %}
