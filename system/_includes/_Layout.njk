@@ -46,6 +46,7 @@
     {% endfor %} {% if stylesheets %} {% for style in stylesheets %}
     <link rel="stylesheet" href="{{ style }}" media="all" />
     {% endfor %} {% endif %} {% endblock %}
+
   </head>
 
   <body class="{{ title | slug }}">

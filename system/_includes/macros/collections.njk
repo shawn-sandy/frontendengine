@@ -9,12 +9,6 @@
     <a href="{{ content.url }}">{{ content.data.title }}</a>
   </h2>
   <p>
-    <time datetime="{{ page.date.toLocaleString() }}">
-      Posted: {{ content.date  }}
-      <!-- Posted: {{ hlp.11ty.formatDate(content.date.toUTCString()) }} -->
-    </time>
-  </p>
-  <p>
     {% if content.data.summary.length -%}
     {{ content.data.summary }}
     {% else %}
@@ -22,9 +16,12 @@
     truncate(300) }}
     {% endif -%}
   </p>
-  <p>
-    {{ content.data.tags }}
-  </p>
+  <div>
+    <time datetime="{{ page.date.toLocaleString() }}">
+      {# Posted: {{ content.date  }} #}
+      Posted: {{ hlp.11ty.timePosted(content.date) }}
+    </time>
+  </div>
   <footer>
     <a href="{{ content.url }}" role="button">
       <em>Continue reading</em>

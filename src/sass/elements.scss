@@ -6,9 +6,6 @@
 // @include components.header-addBorders();
 @include components.elements-pre();
 
-a {
-
-}
 
 a[role=button]>em {
   filter: contrast(1.15);
@@ -26,6 +23,10 @@ h1, h2, h3 {
 
     &:any-link {
       color: vars.$navy;
+      text-decoration: none;
+      &:hover {
+        text-decoration: solid;
+      }
     }
   }
 }

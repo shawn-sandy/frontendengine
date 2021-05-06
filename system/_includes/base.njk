@@ -1,18 +1,22 @@
 {% extends "_Layout.njk" %}
-<!-- head -->
+
 {% block head %}{{ super() }} {% endblock %}
-<!-- cover -->
+
 {% block cover %} {% endblock %}
-<!-- content -->
+
 {% block content %}
 <main>
   <section>
-    {% if showDate %} Posted:
+    {{ content | safe }}
+    <hr>
+    <p>
+    {% if showDate %}
+    Author: {{ data.author or 'Admin' }} <br>
     <time datetime="{{ page.date }}">
-      {{ page.date.toDateString() }}
+     Posted: {{ hlp.11ty.timePosted(page.date) }}
     </time>
     {% endif %}
-    {{ content | safe }}
+    </p>
   </section>
   <aside>{% include "partials/sidebar.njk" %}</aside>
 </main>
