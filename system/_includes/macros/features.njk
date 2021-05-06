@@ -1,0 +1,38 @@
+{%- macro category(tag = 'posts') %}
+<!--  -->
+{%- set data = collections[tag] %}
+
+<!--  -->
+{% for content in data %}
+<article>
+  <h3 id="{{ content.data.title or 'no-slug' | slug }}">
+    <a href="{{ content.url }}">{{ content.data.title }}</a>
+  </h3>
+  <p>
+    <time datetime="{{ page.date.toLocaleString() }}">
+      Posted: {{ content.date  }}
+      <!-- Posted: {{ hlp.11ty.formatDate(content.date.toUTCString()) }} -->
+    </time>
+  </p>
+  <p>
+    {% if content.data.summary.length -%}
+    {{ content.data.summary }}
+    {% else %}
+    {{ hlp.11ty.noHtml(content.templateContent) |
+    truncate(300) }}
+    {% endif -%}
+  </p>
+  <p>
+    {{ content.data.tags }}
+  </p>
+  <footer>
+    <a href="{{ content.url }}" role="button">
+      <em>Continue reading</em>
+    </a>
+  </footer>
+  <hr />
+</article>
+
+{% endfor %}
+<!--  -->
+{% endmacro %}

@@ -1,13 +1,12 @@
 @use '@shawnsandy/first-paint/src/styles/critical.scss';
+@use './vars.scss';
 
 body {
-  background-color: #F2F4F6 !important;
+  background-color: vars.$bg !important;
   background-image: url("/images/header-bg.svg");
   background-repeat: no-repeat;
   background-size: 100% !important;
 }
-
-$pink: #FF4154;
 
 .action-primary,
 nav section {
@@ -18,11 +17,11 @@ nav section {
     &:active,
     &:visited,
     &:link {
-      color: $pink;
+      color: vars.$pink;
     }
 
     &:hover {
-      color: darken($pink, 40)
+      color: darken(vars.$pink, 40)
     }
   }
 }
@@ -40,5 +39,16 @@ main {
 
   &-medium {
     font-weight: 500;
+  }
+}
+
+a[role=button]>em,
+.fp-button-link[role=button]>em {
+  background-color: vars.$pink;
+  border-radius: 6.1875rem !important;
+  color: white;
+  &:hover {
+    background-color: vars.$navy;
+
   }
 }

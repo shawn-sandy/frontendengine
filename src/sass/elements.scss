@@ -1,5 +1,5 @@
+@use './vars.scss' as vars;
 @use '@shawnsandy/first-paint/src/components.scss';
-
 
 @include components.button-links();
 @include components.form-elements();
@@ -7,9 +7,28 @@
 @include components.elements-pre();
 
 
-
 a[role=button]>em {
   filter: contrast(1.15);
+  background-color: vars.$pink;
+  color: vars.$white;
+
+  &:hover {
+    background-color: vars.$navy;
+
+  }
+}
+
+h1, h2, h3 {
+  a {
+
+    &:any-link {
+      color: vars.$navy;
+      text-decoration: none;
+      &:hover {
+        text-decoration: solid;
+      }
+    }
+  }
 }
 
 header>section[role=banner] {
@@ -65,4 +84,8 @@ footer[role="contentinfo"] {
   small {
     font-size: .75rem;
   }
+}
+
+a[role=button]>em {
+
 }

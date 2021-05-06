@@ -8,4 +8,6 @@ eleventyNavigation:
   order: 1
 ---
 
-{% include 'partials/category.njk' %}
+{% import "macros/collections.njk" as collection with context %}
+
+<section>{{ collection.category(category) }}</section>
