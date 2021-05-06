@@ -16,12 +16,12 @@
     truncate(300) }}
     {% endif -%}
   </p>
-  <div>
+  <p>
     <time datetime="{{ page.date.toLocaleString() }}">
       {# Posted: {{ content.date  }} #}
       Posted: {{ hlp.11ty.timePosted(content.date) }}
     </time>
-  </div>
+  </p>
   <footer>
     <a href="{{ content.url }}" role="button">
       <em>Continue reading</em>
