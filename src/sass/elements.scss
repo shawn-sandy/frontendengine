@@ -9,12 +9,23 @@
 
 a[role=button]>em {
   filter: contrast(1.15);
-  background-color: vars.$pink;
-  color: vars.$white;
+  background-color: vars.$navy;
+  color: vars.$yellow;
   padding: 1rem 2rem;
+  font-size: 0.95rem;
+  font-family: Quicksand,
+    sans-serif !important;
+  font-weight: 700;
 
   &:hover {
-    background-color: vars.$navy;
+    background-color: vars.$pink;
+    color: vars.$white;
+  }
+}
+
+header {
+  a[role=button]>em {
+    background-color: vars.$navy !important;
   }
 }
 
@@ -68,10 +79,13 @@ nav {
 }
 
 footer[role="contentinfo"] {
-  background-color: #002C4B;
+  background-color: vars.$navy;
   padding: 2rem 0;
-  font-size: .82rem;
-  color: #FF4154;
+  font-size: .9rem;
+  color: vars.$white;
+  font-weight: 500;
+
+
 
   a {
 
@@ -79,7 +93,8 @@ footer[role="contentinfo"] {
     &:visited,
     &:link,
     &:hover {
-      color: #FF4154
+      color: vars.$yellow;
+      font-family: Quicksand;
     }
 
   }
@@ -88,5 +103,3 @@ footer[role="contentinfo"] {
     font-size: .75rem;
   }
 }
-
-a[role=button]>em {}

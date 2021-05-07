@@ -1,8 +1,7 @@
 {%- macro category(tag = 'posts') %}
-  <!-- -->
+
   {%- set data = collections[tag] %}
 
-  <!-- -->
   {% for content in data %}
     <article>
       <h3 id="{{ content.data.title or 'no-slug' | slug }}">
@@ -32,5 +31,5 @@
     </article>
 
   {% endfor %}
-  <!-- -->
+
 {% endmacro %}
