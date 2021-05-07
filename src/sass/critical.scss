@@ -12,16 +12,16 @@ body {
 nav section {
 
   a {
-    color: #FF4154;
+    color: vars.$navy;
 
     &:active,
     &:visited,
     &:link {
-      color: vars.$pink;
+      color: vars.$navy;
     }
 
     &:hover {
-      color: darken(vars.$pink, 40)
+      color: darken(vars.$pink, 5)
     }
   }
 }
@@ -47,6 +47,7 @@ a[role=button]>em,
   background-color: vars.$pink;
   border-radius: 6.1875rem !important;
   color: white;
+
   &:hover {
     background-color: vars.$navy;
 
