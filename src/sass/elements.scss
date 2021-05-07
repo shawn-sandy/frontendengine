@@ -1,4 +1,4 @@
-@use './vars.scss' as vars;
+@use './vars.scss'as vars;
 @use '@shawnsandy/first-paint/src/components.scss';
 
 @include components.button-links();
@@ -11,21 +11,24 @@ a[role=button]>em {
   filter: contrast(1.15);
   background-color: vars.$pink;
   color: vars.$white;
+  padding: 1rem 2rem;
 
   &:hover {
     background-color: vars.$navy;
-
   }
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   a {
 
     &:any-link {
       color: vars.$navy;
       text-decoration: none;
+
       &:hover {
-        text-decoration: solid;
+        text-decoration: underline solid;
       }
     }
   }
@@ -86,6 +89,4 @@ footer[role="contentinfo"] {
   }
 }
 
-a[role=button]>em {
-
-}
+a[role=button]>em {}
