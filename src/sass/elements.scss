@@ -83,21 +83,22 @@ footer[role="contentinfo"] {
   padding: 2rem 0;
   font-size: .9rem;
   color: vars.$white;
-
-
-
+  border-bottom: vars.$pink thick solid;
+  color: vars.$yellow;
 
   a {
 
     &:active,
     &:visited,
-    &:link,
-    &:hover {
+    &:link {
       color: vars.$yellow;
       font-family: Quicksand;
       font-weight: 700;
       text-decoration: none;
       line-height: 1.4;
+    }
+    &:hover {
+      color: vars.$pink;
     }
 
   }
@@ -106,3 +107,4 @@ footer[role="contentinfo"] {
     font-size: .75rem;
   }
 }
+

@@ -32,6 +32,6 @@ module.exports = {
   noHtml: stripHtml,
   timeAgo,
   timePosted: timeAgo,
-  formatDate: formatDate,
+  formatDate,
   limit
 }
