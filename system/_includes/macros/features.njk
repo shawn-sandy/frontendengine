@@ -1,8 +1,5 @@
 {%- macro category(tag = 'posts') %}
-  <!-- -->
   {%- set data = collections[tag] %}
-
-  <!-- -->
   {% for content in data %}
     <article>
       <h3 id="{{ content.data.title or 'no-slug' | slug }}">
@@ -33,9 +30,8 @@
       </footer>
       <hr/>
     </article>
-
   {% endfor %}
-  <!-- -->
+
 {% endmacro %}
 
 {# adds a grid styled collection to the page #}
@@ -61,6 +57,7 @@
 {%- endmacro -%}
 
 {# display a list with title and links #}
+
 {# attributes tag - tag, limit - number of items #}
 {%- macro postLinks(tag = 'posts', limit = 3) -%}
   {%- set feature = hlp.11ty.limit(collections[tag], limit) | reverse -%}
@@ -89,6 +86,7 @@
 
 {# display a list with image/links or title #}
 {# attributes tag - tag, limit - number of items #}
+
 {%- macro postImages(tag = 'posts', limit = 3) -%}
   {%- set feature = hlp.11ty.limit(collections[tag], limit) | reverse -%}
   <section>

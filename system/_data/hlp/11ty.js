@@ -31,6 +31,7 @@ module.exports = {
   strip: stripHtml,
   noHtml: stripHtml,
   timeAgo,
+  stripHtml,
   formatDate,
   limit
 }
