@@ -8,8 +8,7 @@
       <p>
         <time datetime="{{ page.date.toLocaleString() }}">
           Posted:
-          {{ content.date  }}
-          <!-- Posted: {{ hlp.11ty.formatDate(content.date.toUTCString()) }} -->
+          {{ hlp.11ty.timeAgo(content.date) }}
         </time>
       </p>
       <p>
@@ -28,8 +27,8 @@
           <em>Continue reading</em>
         </a>
       </footer>
-      <hr/>
     </article>
+    <hr/>
   {% endfor %}
 
 {% endmacro %}
