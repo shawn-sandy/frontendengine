@@ -8,6 +8,12 @@ body {
   background-size: 100% !important;
 }
 
+header {
+  [role="banner"] {
+    color: vars.$navy;
+  }
+}
+
 .action-primary,
 nav section {
   a {
@@ -64,4 +70,9 @@ section [role="list"] [role="listitem"] {
 [role="listitem"] > section {
   flex: 2rem;
   margin-bottom: 2rem;
+}
+
+img + *,
+picture + * {
+  margin-top: 1rem;
 }
