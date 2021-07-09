@@ -1,11 +1,11 @@
 {% extends "base.njk" %}
-
 {% block cover %}
   {% include "partials/hero.njk" %}
 {% endblock %}
-
 {% block content %}
-  {% include "partials/feature-section.njk" %}
-
+  <section>
+    {{ feature.featured('posts', 3) }}
+  </section>
+  {# {% include "partials/feature-section.njk" %} #}
   {{ super() }}
 {% endblock %}
