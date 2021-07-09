@@ -1,3 +1,6 @@
 {
-    "recommendations": ["capaj.vscode-standardjs-snippets"]
+    "recommendations": [
+        "capaj.vscode-standardjs-snippets",
+        "eseom.nunjucks-template"
+    ]
 }

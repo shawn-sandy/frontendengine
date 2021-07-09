@@ -1,84 +1,77 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en">
-  <head>
+  <html lang="en"> <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <meta name="description" content="{{ pkg.description }}" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="{{ pkg.description }}"/> {% include "partials/open-graph.njk" %}
     {% block head %}
-    <title>{{ title }} | {{ settings.title }}</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
+      <title>{{ title }} | {{ settings.title }}</title>
+      <link rel="preconnect" href="https://fonts.gstatic.com"/>
+      <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
-      media="all"
-      rel="stylesheet"
-    />
-    <!-- load the critical styles inline -->
-    {% set css %} {% include "src/css/critical.css" %} {% endset %}
-    <!-- feed it through our cssmin filter to minify -->
-    <style>
-      {{ css | cssmin | safe }}
-    </style>
-    <!-- custom stylesheets -->
-    <link
-      rel="stylesheet"
-      href="/css/styles.css"
-      rel="stylesheet"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      href="/css/elements.css"
-      rel="stylesheet"
-      media="all"
-    />
-    {% for styles in settings.styles %}
-    <link href="{{ styles }}" rel="stylesheet" media="all" />
-    {% endfor %} {% if stylesheets %} {% for style in stylesheets %}
-    <link rel="stylesheet" href="{{ style }}" media="all" />
-    {% endfor %} {% endif %} {% endblock %}
-
+        media="all"
+        rel="preload stylesheet"
+        as="style"/> <!-- load the critical styles inline -->
+      {% set css %}
+      {% include "src/css/critical.css" %}
+      {% endset %}
+      <!-- feed it through our cssmin filter to minify -->
+      <style>
+        {{css | cssmin | safe}}</style>
+      <!-- custom stylesheets -->
+      <link rel="stylesheet" href="/css/styles.css" media="all"/>
+      <link rel="stylesheet" href="/css/elements.css" media="all"/>
+      {% for styles in settings.styles %}
+        <link href="{{ styles }}" rel="stylesheet" media="all"/>
+      {% endfor %}
+      {% if stylesheets %}
+        {% for style in stylesheets %}
+          <link rel="stylesheet" href="{{ style }}" media="all"/>
+        {% endfor %}
+      {% endif %}
+    {% endblock %}
+    {% import "_macros/collections/featured.njk" as feature with context %}
+    {% import "_macros/nav.njk" as nav with context %}
   </head>
-
-  <body class="{{ title | slug }}">
+  <body class="page-{{ page.fileSlug or 'home' }}">
     <!-- header -->
     <!-- header -->
-    {% block header %}
-
-    <header>
-      <!-- nav -->
-      {% include "partials/nav.njk" %} {% endblock %}
-      <!-- cover -->
-      {% block cover %} {% endblock %}
+      {% block header %}
+        <header>
+        <!-- nav -->
+      {% include "partials/nav.njk" %}
+      {% endblock %}
+      <!-- cover -->{% block cover %}
+    {% endblock %}
     </header>
     <!-- content -->
-    {% block content %}
+      {% block content %}
     {{ content | safe }}
     {% endblock %}
-
     <!-- footer -->
-    {% block footer %} {% include "partials/footer.njk" %} {% endblock %}
+      {% block footer %}
+    {% include "partials/footer.njk" %}
+    {% endblock %}
     <!-- scripts - replaced jquery with vue -->
     <!-- scripts - replaced jquery with vue -->
-    {% for js in metadata.scripts %}
-    <script src="{{ js }}"></script>
+      {% for js in metadata.scripts %}<script src="{{ js }}"> </script>
     {% endfor %}
-    <!--  -->
-    {% if scripts %} {% for script in scripts %}
-    <script src="{{ script }}"></script>
-    {% endfor %} {% endif %}
-    <!--  -->
-    {% if settings.scripts %} {% for src in settings.scripts %}
-    <script src="{{ src }}"></script>
-    {% endfor %} {% endif %}
+    <!-- -->
+    {% if scripts %}
+      {% for script in scripts %}
+        <script src="{{ script }}"></script>
+      {% endfor %}
+    {% endif %}
+    <!-- -->
+    {% if settings.scripts %}
+      {% for src in settings.scripts %}
+        <script src="{{ src }}"></script>
+      {% endfor %}
+    {% endif %}
   </body>
 </html>
