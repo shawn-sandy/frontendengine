@@ -4,6 +4,9 @@
   "emmet.includeLanguages": {
     "nunjucks": "html"
   },
+  "files.associations": {
+    "*.njk": "njk"
+  },
   "files.autoSave": "onFocusChange",
   "editor.formatOnSave": true,
   "eslint.format.enable": true,
