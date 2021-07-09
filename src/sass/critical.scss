@@ -91,6 +91,7 @@ a[role="button"] > em,
   background-color: vars.$pink;
   border-radius: 6.1875rem !important;
   color: white;
+  transition: all 0.3s ease !important;
 
   &:hover {
     background-color: vars.$navy;
