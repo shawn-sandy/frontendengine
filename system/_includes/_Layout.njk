@@ -38,7 +38,7 @@
     {% import "_macros/collections/featured.njk" as feature with context %}
     {% import "_macros/nav.njk" as nav with context %}
   </head>
-  <body class="{{ title | slug }}">
+  <body class="page-{{ page.fileSlug or 'home' }}">
     <!-- header -->
     <!-- header -->
       {% block header %}
