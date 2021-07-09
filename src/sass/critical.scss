@@ -119,3 +119,31 @@ img + *,
 picture + * {
   margin-top: 1rem;
 }
+
+footer[role="contentinfo"] {
+  background-color: vars.$navy;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: vars.$white;
+  border-bottom: vars.$pink thick solid;
+  color: vars.$yellow;
+
+  a {
+    &:active,
+    &:visited,
+    &:link {
+      color: vars.$yellow;
+      font-family: Quicksand;
+      font-weight: 700;
+      text-decoration: none;
+      line-height: 1.4;
+    }
+    &:hover {
+      color: vars.$pink;
+    }
+  }
+
+  small {
+    font-size: 0.75rem;
+  }
+}
