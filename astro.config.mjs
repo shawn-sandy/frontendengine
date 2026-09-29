@@ -19,11 +19,11 @@ export default defineConfig({
     sitemap(),
     embeds(),
     starlight({
-      title: 'Astro-Basics Guide',
+      title: 'FrontendEngine Guide',
       disable404Route: true,
       // Social links (array format for v0.35.2)
       social: [
-        { icon: 'github', label: 'GitHub', href: 'https://github.com/shawn-sandy/astro-basics' },
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/shawn-sandy/frontendengine' },
       ],
 
       // Sidebar configuration for src/content/docs/guide structure
@@ -82,7 +82,7 @@ export default defineConfig({
       customCss: ['./src/styles/starlight-custom.scss'],
 
       // Enable features
-      editLink: { baseUrl: 'https://github.com/shawn-sandy/astro-basics/edit/main/' },
+      editLink: { baseUrl: 'https://github.com/shawn-sandy/frontendengine/edit/main/' },
       lastUpdated: true,
       pagination: true,
       tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 3 },

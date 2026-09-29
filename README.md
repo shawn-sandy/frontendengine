@@ -1,9 +1,38 @@
-# Astro Basics Website
+# FrontendEngine
 
-A production-ready Astro website showcasing modern web development practices with authentication, database
-integration, and interactive features. This project demonstrates Astro's capabilities for building fast, secure,
-content-focused websites with a comprehensive component library, multiple database backends, progressive web app
-functionality, and enterprise-grade security features.
+A design engineering blog: interfaces, motion, design systems and the CSS that holds them together. Each post
+is a pillar piece with live demos, and carries its own social distribution plan (YouTube, Shorts, Instagram,
+LinkedIn, newsletter and more) in typed frontmatter.
+
+Built on [astro-basics](https://github.com/shawn-sandy/astro-basics): Astro 7, React, fpkit, Clerk and Supabase.
+
+## Writing a post
+
+Posts live in `src/content/posts/`. On top of the usual fields (`title`, `pubDate`, `description`, `tags`,
+`image`, `youtube`, `publish`), a post can declare:
+
+```yaml
+summary: 'Social-length hook, 280 characters max. Used for OG and RSS descriptions.'
+derivatives:
+  - platform: linkedin # youtube | youtube-shorts | instagram | linkedin | tiktok | x | bluesky | threads | newsletter
+    status: draft
+    copy: 'Post body'
+  - platform: youtube-shorts
+    status: scheduled
+    scheduledFor: 2026-10-06T14:00:00Z # required when scheduled
+    copy: 'Caption'
+    asset: /media/shorts/clip.mp4
+  - platform: instagram
+    status: published
+    publishedUrl: https://www.instagram.com/p/... # required when published
+    copy: 'Caption'
+```
+
+The build fails if a scheduled derivative has no date, a published one has no URL, or any non-draft derivative
+points at a post that is not `publish: true`. Schema and helpers: `src/libs/distribution.ts`.
+
+Every page emits OpenGraph and Twitter card tags. Posts use their `image` (or the site card at
+`public/images/frontendengine-og.png`) and their `summary`. Set `SITE_URL` so card URLs are absolute.
 
 ## Project Features
 

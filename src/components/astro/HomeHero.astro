@@ -28,9 +28,9 @@
  * <!-- All three strings are overridable; every one has a default. -->
  * <HomeHero
  *   slot="header"
- *   eyebrow="30+ components / built for Claude Code"
- *   headline="Build agentic web apps on Astro Kit."
- *   deck="Login, database and dashboard come wired in."
+ *   eyebrow="Design engineering / interfaces, motion, systems"
+ *   headline="Where design meets the code that ships it."
+ *   deck="Deep dives with live, working demos."
  * />
  * ```
  */
@@ -46,9 +46,9 @@ export type Props = {
 }
 
 const {
-  eyebrow = '30+ components / built for Claude Code',
-  headline = 'Build agentic web apps on Astro Kit.',
-  deck = 'Login, database and dashboard come wired in, and the repo is set up for Claude Code to work in.',
+  eyebrow = 'Design engineering / interfaces, motion, systems',
+  headline = 'Where design meets the code that ships it.',
+  deck = 'Deep dives with live, working demos: the decisions, the CSS and the components behind interfaces that feel right.',
 } = Astro.props as Props
 
 const specimenTitle = 'Accessibility First'
@@ -82,8 +82,9 @@ const specimenCode = [
     <p class="home-hero__deck" data-home-hero-deck>{deck}</p>
 
     <div class="home-hero__cta">
-      <a class="home-hero__button" href={specimenLink}>Browse components</a>
-      <a class="home-hero__button home-hero__button--ghost" href="/blog">Read the blog</a>
+      <a class="home-hero__button" href="/posts/1">Read the latest</a>
+      <a class="home-hero__button home-hero__button--ghost" href={specimenLink}>Browse components</a
+      >
     </div>
 
     <p class="home-hero__legend">

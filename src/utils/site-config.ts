@@ -21,8 +21,11 @@ export const BREADCRUMB_ROUTE = [
   },
 ]
 
-export const SITE_TITLE = 'Astro Kit'
-export const SITE_DESCRIPTION = 'A simple, easy to use multipurpose starter theme for Astro.'
+export const SITE_TITLE = 'FrontendEngine'
+export const SITE_DESCRIPTION =
+  'Design engineering in practice: interfaces, motion, design systems and the CSS that holds them together.'
+/** Default social card, used by any page that does not set its own image. */
+export const SITE_OG_IMAGE = '/images/frontendengine-og.png'
 export const SITE_LOGO = '/logo.png'
 export const PAGINATION_COUNT: number = 2
 export const CONTACT_INFO = {

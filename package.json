@@ -1,20 +1,20 @@
 {
-  "name": "astro-basics-website",
+  "name": "frontendengine",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "private": true,
-  "description": "Astro-based website demonstrating components and utilities",
+  "description": "FrontendEngine: a design engineering blog built on Astro, with social distribution metadata per post",
   "author": "Shawn Sandy",
   "license": "MIT",
   "keywords": [
     "astro",
-    "website",
-    "content",
-    "blog"
+    "blog",
+    "design-engineering",
+    "frontend"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/shawn-sandy/astro-basics"
+    "url": "https://github.com/shawn-sandy/frontendengine"
   },
   "exports": {
     ".": "./src/components/index.ts",
@@ -65,13 +65,13 @@
     "db:sync-user": "node --env-file=.env scripts/sync-current-user.js",
     "npm-update": "npx npm-check-updates -u",
     "npm-update-i": "npx npm-check-updates -i",
-    "ticket:validate": "gh auth status && gh repo view && echo '✅ GitHub CLI ready for ticket creation'",
+    "ticket:validate": "gh auth status && gh repo view && echo '\u2705 GitHub CLI ready for ticket creation'",
     "ticket:create": "gh issue create --web",
     "ticket:list": "gh issue list --state open",
     "ticket:labels": "gh label list",
     "setup:roles": "tsx scripts/setup-roles.ts",
     "setup:roles:dry-run": "tsx scripts/setup-roles.ts --dry-run",
-    "validate:roles": "tsx -e \"import { validateRoleConfig } from './scripts/lib/role-validator.js'; import { roleConfig } from './config/roles.config.js'; const result = validateRoleConfig(roleConfig); if (!result.success) { console.error('Validation failed:', result.errors); process.exit(1); } console.log('✓ Configuration is valid!');\"",
+    "validate:roles": "tsx -e \"import { validateRoleConfig } from './scripts/lib/role-validator.js'; import { roleConfig } from './config/roles.config.js'; const result = validateRoleConfig(roleConfig); if (!result.success) { console.error('Validation failed:', result.errors); process.exit(1); } console.log('\u2713 Configuration is valid!');\"",
     "prepare": "husky && patch-package",
     "prebuild": "npm run sass:build"
   },

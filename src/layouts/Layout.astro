@@ -3,8 +3,34 @@ import Base from './Base.astro'
 import Header from '#components/astro/Header.astro'
 import Sidebar from '#components/astro/Sidebar.astro'
 import MainSection from '#components/astro/MainSection.astro'
-const { pageTitle, pageDescription, pageImageUrl, hideHeader, showBreadcrumb, breadcrumbRoutes } =
-  Astro.props
+
+type BreadcrumbRoute = {
+  name: string
+  url: string
+  path?: string | undefined
+}
+
+export type Props = {
+  pageTitle?: string
+  pageDescription?: string
+  pageImageUrl?: string
+  /** Social card image; see `Base.astro`. */
+  ogImageUrl?: string | undefined
+  ogType?: 'website' | 'article'
+  hideHeader?: boolean
+  showBreadcrumb?: boolean
+  breadcrumbRoutes?: BreadcrumbRoute[]
+}
+const {
+  pageTitle,
+  pageDescription,
+  pageImageUrl,
+  ogImageUrl,
+  ogType,
+  hideHeader,
+  showBreadcrumb,
+  breadcrumbRoutes,
+} = Astro.props
 
 // Resolved once so the fallback `Header` below is rendered from exactly the
 // same values that are handed to `Base`, keeping every non-homepage route
@@ -18,6 +44,8 @@ const resolvedDescription = pageDescription || 'Sign in to your account'
   pageTitle={resolvedTitle}
   pageDescription={resolvedDescription}
   pageImageUrl={pageImageUrl}
+  ogImageUrl={ogImageUrl}
+  ogType={ogType}
 >
   {
     /*

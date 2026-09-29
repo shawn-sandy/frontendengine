@@ -4,9 +4,17 @@ import Youtube from '#components/astro/Youtube.astro'
 import Img from '#components/astro/Img.astro'
 import Toc from '#components/astro/Toc.astro'
 import { sanitizeImageUrl } from '#utils/security'
-const frontmatter = Astro.props.frontmatter
+import type { MarkdownHeading } from 'astro'
+import type { CollectionEntry } from 'astro:content'
 
-const headings = Astro.props.headings
+export type Props = {
+  /** `posts` entries carry the distribution fields; `content` entries do not. */
+  frontmatter: CollectionEntry<'posts' | 'content'>['data']
+  headings?: MarkdownHeading[]
+}
+
+const { frontmatter, headings = [] } = Astro.props
+const socialDescription = 'summary' in frontmatter ? frontmatter.summary : undefined
 const { slug } = Astro.params
 
 // Sanitize image URL to prevent XSS attacks
@@ -29,7 +37,9 @@ const contentRoute: ContentRoute[] = [
 
 <Layout
   pageTitle={frontmatter.title}
-  pageDescription={frontmatter.description}
+  pageDescription={socialDescription ?? frontmatter.description}
+  ogImageUrl={safeImageUrl ?? undefined}
+  ogType="article"
   breadcrumbRoutes={contentRoute}
 >
   {

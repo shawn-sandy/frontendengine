@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-**AI Development Assistant Instructions for astro-basics Project**
+**AI Development Assistant Instructions for the FrontendEngine Project**
 
 This file serves as the entry point for AI assistants working on this codebase. For detailed patterns and validation rules, consult the specialized instruction files below.
 
@@ -32,7 +32,7 @@ What am I creating?
 
 ## Project Overview
 
-**astro-basics** is a content-rich Astro website serving as both a component library and demonstration site. It uses server-side rendering, Clerk authentication, and supports multiple database backends.
+**FrontendEngine** is a design engineering blog built on astro-basics, a content-rich Astro website that also serves as a component library. Posts carry typed social distribution metadata (`summary`, `derivatives`) defined in `src/libs/distribution.ts`. It uses server-side rendering, Clerk authentication, and supports multiple database backends.
 
 ### Core Architecture Principles
 

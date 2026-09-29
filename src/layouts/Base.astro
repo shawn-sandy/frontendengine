@@ -4,10 +4,11 @@ import Navigation from '#components/astro/Navigation.astro'
 import Footer from '#components/astro/Footer.astro'
 import Header from '#components/astro/Header.astro'
 import ThemeToggle from '#components/astro/ThemeToggle.astro'
+import OpenGraph from '#components/astro/OpenGraph.astro'
 // import PWAInstallPrompt from '#components/astro/PWAInstallPrompt.astro'
 // import OfflineIndicator from '#components/astro/OfflineIndicator.astro'
 
-import { SITE_DESCRIPTION, SITE_TITLE } from '#utils/site-config'
+import { SITE_DESCRIPTION, SITE_OG_IMAGE, SITE_TITLE } from '#utils/site-config'
 import '@fpkit/acss/styles'
 import '../styles/index.css'
 import { Show, UserButton, SignInButton } from '@clerk/astro/components'
@@ -22,6 +23,10 @@ type Props = {
   pageTitle?: string
   pageDescription?: string
   pageImageUrl?: string
+  /** Social card image; defaults to `pageImageUrl`, then the site-wide card. */
+  ogImageUrl?: string
+  /** `og:type`. Posts pass `article`; everything else is a `website`. */
+  ogType?: 'website' | 'article'
   showBreadcrumb?: boolean
   breadcrumbRoutes?: routeItem[]
   hideHeader?: boolean
@@ -34,7 +39,15 @@ const showBreadcrumb = Astro.props.showBreadcrumb === undefined ? true : Astro.p
 // Get authentication state from locals
 const { userId } = Astro.locals
 
-const { pageTitle, pageDescription, pageImageUrl, hideHeader, hideSiteChrome } = Astro.props
+const { pageTitle, pageDescription, pageImageUrl, ogImageUrl, ogType, hideHeader, hideSiteChrome } =
+  Astro.props
+
+// Social crawlers need absolute URLs. `Astro.site` comes from `SITE_URL`; the
+// request URL is the fallback so dev and previews still emit something valid.
+const siteBase = Astro.site ?? Astro.url
+const ogTitle = pageTitle && pageTitle !== SITE_TITLE ? `${pageTitle} | ${SITE_TITLE}` : SITE_TITLE
+const ogImage = new URL(ogImageUrl || pageImageUrl || SITE_OG_IMAGE, siteBase).href
+const canonicalUrl = new URL(Astro.url.pathname, siteBase).href
 ---
 
 <html lang="en">
@@ -75,14 +88,25 @@ const { pageTitle, pageDescription, pageImageUrl, hideHeader, hideSiteChrome } =
     <meta name="theme-color" content="#1e293b" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="AstroKit" />
-    <meta name="application-name" content="AstroKit" />
+    <meta name="apple-mobile-web-app-title" content="FrontendEngine" />
+    <meta name="application-name" content="FrontendEngine" />
 
     <!-- Apple Touch Icons -->
     <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png" />
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/manifest.webmanifest" />
+
+    <link rel="canonical" href={canonicalUrl} />
+    <OpenGraph
+      title={ogTitle}
+      description={pageDescription || SITE_DESCRIPTION}
+      url={canonicalUrl}
+      image={ogImage}
+      imgWidth="1200"
+      imgHeight="630"
+      type={ogType ?? 'website'}
+    />
 
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle || SITE_TITLE}</title>

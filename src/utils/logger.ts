@@ -320,7 +320,7 @@ class Logger {
           ...(logEntry.context || {}), // Flatten context for better Axiom querying
           // Add metadata for filtering and monitoring
           environment: this.isProd ? 'production' : 'development',
-          service: 'astro-basics',
+          service: 'frontendengine',
         },
       ])
     } catch (error) {

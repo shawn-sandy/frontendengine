@@ -3,6 +3,8 @@ import { docsSchema } from '@astrojs/starlight/schema'
 import { glob } from 'astro/loaders'
 import { defineCollection, z } from 'astro:content'
 
+import { derivativesAheadOfPost, distributionFields } from './libs/distribution'
+
 const baseSchema = z.object({
   title: z.string(),
   pubDate: z.date(),
@@ -31,7 +33,15 @@ const baseSchema = z.object({
 
 const posts = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/posts' }),
-  schema: baseSchema,
+  schema: baseSchema.extend(distributionFields).superRefine((post, ctx) => {
+    for (const derivative of derivativesAheadOfPost(post.publish, post.derivatives)) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['derivatives'],
+        message: `A ${derivative.status} ${derivative.platform} derivative links to this post, so the post needs \`publish: true\`.`,
+      })
+    }
+  }),
 })
 
 const docs = defineCollection({

@@ -23,9 +23,11 @@ const { description, title, url, image, type, twitterUsername, imgHeight, imgWid
 <meta property="og:image" content={image} />
 <meta property="og:url" content={url} />
 <meta property="og:description" content={description} />
-<!-- Twitter -->
 <meta property="og:image:width" content={imgWidth || '1280'} />
 <meta property="og:image:height" content={imgHeight || '640'} />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content={image} />
-<meta property="twitter:site" content={twitterUsername} />
+<!-- X / Twitter reads `name`, not `property` -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+{twitterUsername && <meta name="twitter:site" content={twitterUsername} />}
